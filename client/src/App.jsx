@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
 import { withRouter } from 'react-router';
 
 import decode from 'jwt-decode';
@@ -24,7 +24,7 @@ import './App.css';
 
 class App extends Component {
   state = {
-    posts: [{title: 'hey'}],
+    posts: [],
     postForm: {
       title: "",
       ingredients: "",
@@ -38,11 +38,22 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    this.getPosts()
+    const checkUser = localStorage.getItem("jwt");
+    if (checkUser) {
+      const user = decode(checkUser);
+      this.setState({
+        currentUser: user
+      })
+    }
+  }
+
   getPosts = async () => {
-    const posts = await readAllPosts()
+    const data = await readAllPosts()
     this.setState({
-      posts
-    })
+      posts: data
+    },()=>{console.log(this.state)})
   }
 
   newPost = async (e) => {
@@ -114,17 +125,6 @@ class App extends Component {
     }));
   }
 
-  componentDidMount() {
-    this.getPosts()
-    const checkUser = localStorage.getItem("jwt");
-    if (checkUser) {
-      const user = decode(checkUser);
-      this.setState({
-        currentUser: user
-      })
-    }
-  }
-
   render() {
     return (
       <div>
@@ -148,48 +148,51 @@ class App extends Component {
             }
           </div>
         </header>
-        <Route exact path="/login" render={() => (
-          <Login
-            handleLogin={this.handleLogin}
-            handleChange={this.authHandleChange}
-            formData={this.state.authFormData} />)} />
-        <Route exact path="/register" render={() => (
-          <Register
-            handleRegister={this.handleRegister}
-            handleChange={this.authHandleChange}
-            formData={this.state.authFormData} />)} />
-        <Route
-          exact path="/"
-          render={() => (
-            <Posts
-              posts={this.state.posts}
-              postForm={this.state.postForm}
-              handleFormChange={this.handleFormChange}
-              newPost={this.newPost} />
-          )}
-        />
-        <Route
-          path="/new/post"
-          render={() => (
-            <PostCreate
-              handleFormChange={this.handleFormChange}
-              postForm={this.state.postForm}
-              newPost={this.newPost} />
-          )} />
-        <Route
-          path="/posts/:id"
-          render={(props) => {
-            const { id } = props.match.params;
-            const post = this.state.posts.find(el => el.id === parseInt(id));
-            return <Post
-              id={id}
-              post={post}
-              handleFormChange={this.handleFormChange}
-              postForm={this.state.postForm}
-              // deleteInstructor={this.deleteInstructor} 
+        <Switch>
+          <Route exact path="/login" render={() => (
+            <Login
+              handleLogin={this.handleLogin}
+              handleChange={this.authHandleChange}
+              formData={this.state.authFormData} />)} />
+          <Route exact path="/register" render={() => (
+            <Register
+              handleRegister={this.handleRegister}
+              handleChange={this.authHandleChange}
+              formData={this.state.authFormData} />)} />
+          <Route
+            exact path="/"
+            render={() => (
+              <Posts
+                posts={this.state.posts}
+                postForm={this.state.postForm}
+                handleFormChange={this.handleFormChange}
+                newPost={this.newPost} />
+            )}
+          />
+          <Route
+            exact path="/new/post"
+            render={() => (
+              <PostCreate
+                handleFormChange={this.handleFormChange}
+                postForm={this.state.postForm}
+                newPost={this.newPost} />
+            )} />
+          <Route
+            exact path="/posts/:id"
+            render={(props) => {
+              const { id } = props.match.params;
+              const post = this.state.posts.find(el => el.id === parseInt(id));
+              return <Post
+                id={id}
+                post={post}
+                posts={this.state.posts}
+                handleFormChange={this.handleFormChange}
+                postForm={this.state.postForm}
+                // deleteInstructor={this.deleteInstructor} 
+              />
+            }}
             />
-          }}
-        />
+        </Switch>
       </div>
     );
   }

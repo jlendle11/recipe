@@ -6,23 +6,27 @@ import { withRouter } from 'react-router';
 class Post extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isEdit: false
-    }
+    // this.state = {
+    //   isEdit: false
+    // }
   }
 
-  componentDidMount() {
-    this.props.mountEditForm(this.props.id);
-  }
+  // componentDidMount() {
+  //   this.props.mountEditForm(this.props.id);
+  // }
 
   render() {
-    const { post } = this.props;
+    const { posts } = this.props;
+    console.log(posts[0])
+    if (this.props.posts) {
     return (
       <div className="post-page">
         {/* {post === undefined ? <h2>Loading . . .</h2> : ( */}
           {/* <div> */}
             {/* <img alt={user.name} src={user.photo}/> */}
-            <h1>{post.title}</h1>
+
+            <h1>{posts[0].title}</h1>
+
             {/* <p>{user.description}</p>
             <a href={user.link}>Connect</a> */}
             {/* <hr/> */}
@@ -55,6 +59,7 @@ class Post extends Component {
           </div>)} */}
       </div>
     )}
+  }
 }
 
 export default withRouter(Post);

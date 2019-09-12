@@ -14,7 +14,7 @@ header {
   text-align: left;
   padding: 2rem;
   background: linear-gradient(to right, #d6d6d6, #b1b1b1, #d6d6d6);
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   top: 0;
 }

@@ -36,12 +36,13 @@ const createPost = (data) => {
   }
   return fetch(`${baseUrl}/posts`, opts)
     .then(resp => resp.json())
+    
 }
 
 const readAllPosts = () => {
   return fetch(`${baseUrl}/posts`)
     .then(resp => resp.json())
-    .then(json => json.posts)
+    // .then(json => json.posts)
 }
 
 const readOnePost = (id) => {
