@@ -7,7 +7,7 @@ export const loginUser = (loginData) => {
     headers: {
       'Content-Type': 'application/json'
     }
-  };
+  }
 
   return fetch(`${baseUrl}/auth/login`, opts)
     .then(resp => resp.json())
@@ -50,6 +50,18 @@ const readOnePost = (id) => {
     .then(resp => resp.json())
 }
 
+const updatePost = (id, data) => {
+    const opts = {
+      method: 'PUT',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    return fetch(`${baseUrl}/posts/${id}`, opts)
+      .then(resp => resp.json())
+  }
+
 const destroyPost = (id) => {
   const opts = {
     method: 'DELETE'
@@ -62,5 +74,6 @@ export {
   createPost,
   readAllPosts,
   readOnePost,
-  destroyPost
+  destroyPost,
+  updatePost
 }

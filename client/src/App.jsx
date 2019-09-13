@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, Link, Redirect } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
 import { withRouter } from 'react-router';
 
 import decode from 'jwt-decode';
@@ -14,7 +14,7 @@ import Register from './components/Register'
 import {
   createPost,
   readAllPosts,
-  // updatePost,
+  updatePost,
   destroyPost,
   loginUser,
   registerUser
@@ -71,8 +71,17 @@ class App extends Component {
     alert("Recipe added!")
   }
 
+  editPost = async () => {
+    const { postForm } = this.state
+    await updatePost(postForm.id, postForm)
+    this.setState(prevState => ({
+      posts: prevState.posts.map(post => post.id === postForm.id ? postForm : post)
+    }))
+  }
+
   deletePost = async (id) => {
-    await destroyPost(id)
+    let resp = await destroyPost(id)
+    console.log(resp)
     this.setState(prevState => ({
       posts: prevState.posts.filter(post => post.id !== id)
     }))
@@ -105,10 +114,12 @@ class App extends Component {
 
   handleLogin = async () => {
     const userData = await loginUser(this.state.authFormData);
+    console.log(userData)
     this.setState({
       currentUser: decode(userData.token)
     })
     localStorage.setItem("jwt", userData.token)
+    localStorage.setItem("id", userData.id)
   }
 
   handleRegister = async (e) => {
@@ -189,7 +200,7 @@ class App extends Component {
                 newPost={this.newPost} />
             )} />
           <Route
-            exact path="/posts/:id"
+            path="/posts/:id"
             render={(props) => {
               const { id } = props.match.params;
               const post = this.state.posts.find(el => el.id === parseInt(id));
@@ -198,8 +209,10 @@ class App extends Component {
                 post={post}
                 posts={this.state.posts}
                 handleFormChange={this.handleFormChange}
+                mountEditForm={this.mountEditForm}
+                editPost={this.editPost}
                 postForm={this.state.postForm}
-                // deleteInstructor={this.deleteInstructor} 
+                deletePost={this.deletePost} 
               />
             }}
             />

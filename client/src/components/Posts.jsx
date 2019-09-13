@@ -14,9 +14,9 @@ class Posts extends Component {
     <div className="post-container">
         {this.props.posts.map(post => (
           <div
-            key={posts.id}
+            key={post.id}
             className="post-card"
-            // onClick={() => this.props.history.push(`/posts`)}
+            onClick={() => this.props.history.push(`/posts/${post.id}`)}
           >
             <div>
               <h1>{post.title}</h1>
