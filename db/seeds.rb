@@ -9,4 +9,4 @@
 
 user1 = User.create!(username: 'Justin Lendle', email: 'justin@gmail.com', password: 'password123')
 
-post1 = Post.create!(title: 'Eggs', ingredients: 'eggs', instructions: 'fry in pan', user: user1)
+post1 = Post.create!(title: 'Eggs', ingredients: 'eggs', instructions: 'fry in pan', user: user1) 

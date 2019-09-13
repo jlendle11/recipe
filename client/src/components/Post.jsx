@@ -17,6 +17,7 @@ class Post extends Component {
 
   render() {
     const { posts } = this.props;
+
     console.log(posts[0])
     if (this.props.posts) {
     return (
@@ -26,6 +27,12 @@ class Post extends Component {
             {/* <img alt={user.name} src={user.photo}/> */}
 
             <h1>{posts[0].title}</h1>
+            <br/>
+            <h2>Ingredients:</h2>
+            <h3>{posts[0].ingredients}</h3>
+            <br/>
+            <h2>Instructions:</h2>
+            <h4>{posts[0].instructions}</h4>
 
             {/* <p>{user.description}</p>
             <a href={user.link}>Connect</a> */}

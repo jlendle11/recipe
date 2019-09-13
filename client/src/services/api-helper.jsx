@@ -26,23 +26,23 @@ export const registerUser = (registerData) => {
     .then(resp => resp.json())
 }
 
-const createPost = (data) => {
+const createPost = (data, user) => {
+  const payload = Object.assign({}, data, {user_id: user})
+  console.log(user)
   const opts = {
     method: 'POST',
-    body: JSON.stringify(data),
+    body: JSON.stringify(payload),
     headers: {
       'Content-Type': 'application/json'
     }
   }
-  return fetch(`${baseUrl}/posts`, opts)
+  fetch(`${baseUrl}/posts`, opts)
     .then(resp => resp.json())
-    
 }
 
 const readAllPosts = () => {
   return fetch(`${baseUrl}/posts`)
     .then(resp => resp.json())
-    // .then(json => json.posts)
 }
 
 const readOnePost = (id) => {
@@ -50,9 +50,17 @@ const readOnePost = (id) => {
     .then(resp => resp.json())
 }
 
+const destroyPost = (id) => {
+  const opts = {
+    method: 'DELETE'
+  }
+    return fetch(`${baseUrl}/posts/${id}`, opts)
+}
+
 
 export {
   createPost,
   readAllPosts,
-  readOnePost
+  readOnePost,
+  destroyPost
 }

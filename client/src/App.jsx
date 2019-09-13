@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route, Link, Redirect } from 'react-router-dom'
 import { withRouter } from 'react-router';
 
 import decode from 'jwt-decode';
@@ -15,7 +15,7 @@ import {
   createPost,
   readAllPosts,
   // updatePost,
-  // destroyPost,
+  destroyPost,
   loginUser,
   registerUser
 } from './services/api-helper'
@@ -53,19 +53,28 @@ class App extends Component {
     const data = await readAllPosts()
     this.setState({
       posts: data
-    },()=>{console.log(this.state)})
+    })
   }
 
   newPost = async (e) => {
-    e.preventDefault()
-    const post = await createPost(this.state.postForm)
+    // e.preventDefault()
+    
+    const post = await createPost(this.state.postForm, this.state.currentUser.id)
     this.setState(prevState => ({
       posts: [...prevState.posts, post],
       postForm: {
         title: "",
         ingredients: "",
-        description: ""
+        instructions: ""
       }
+    }))
+    alert("Recipe added!")
+  }
+
+  deletePost = async (id) => {
+    await destroyPost(id)
+    this.setState(prevState => ({
+      posts: prevState.posts.filter(post => post.id !== id)
     }))
   }
 
@@ -151,11 +160,13 @@ class App extends Component {
         <Switch>
           <Route exact path="/login" render={() => (
             <Login
+              currentUser={this.state.currentUser}
               handleLogin={this.handleLogin}
               handleChange={this.authHandleChange}
               formData={this.state.authFormData} />)} />
           <Route exact path="/register" render={() => (
             <Register
+              currentUser={this.state.currentUser}
               handleRegister={this.handleRegister}
               handleChange={this.authHandleChange}
               formData={this.state.authFormData} />)} />
