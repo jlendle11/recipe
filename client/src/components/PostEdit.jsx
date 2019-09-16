@@ -5,26 +5,29 @@ function PostEdit(props) {
     console.log('Hi')
   return (
     <div>
-      <h3>Edit post</h3>
+      <h3 className="post-page-instruct">Edit post</h3>
       <form onSubmit={props.handleSubmit}>
 
-        <p>Recipe title:</p>
+        <p className="post-page-instruct">Recipe title:</p>
 
-        <input
+        <input 
+          className="post-page-instruct"
           type="text"
           name="title"
           value={props.postForm.title}
           onChange={props.handleFormChange} />
 
-        <p>Recipe ingredients:</p>
+        <p className="post-page-instruct">Recipe ingredients:</p>
         <input
+          className="post-page-instruct"
           type="text"
           name="ingredients"
           value={props.postForm.ingredients}
           onChange={props.handleFormChange} />
-
-        <p>Recipe instructions:</p>
-        <input
+ 
+        <p className="post-page-instruct">Recipe instructions:</p>
+        <input 
+          className="post-page-instruct"
           type="text"
           name="instructions"
           value={props.postForm.instructions}

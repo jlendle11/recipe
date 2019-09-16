@@ -38,8 +38,8 @@ class Post extends Component {
             <h2>Ingredients:</h2>
             <h3>{post.ingredients}</h3>
             <br/>
-            <h2>Instructions:</h2>
-            <h4>{post.instructions}</h4>
+            <h2 className="post-page-instruct" >Instructions:</h2>
+            <h4 className="post-page-instruct" >{post.instructions}</h4>
 
             <hr/>
             {this.state.isEdit ?

@@ -4,9 +4,28 @@
 
 body {
   text-align: center;
-  background-image: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-photo%2Fgrunge-wooden-cutting-board-with-copy-space-design-make-food-background_3249-2468.jpg&f=1&nofb=1");
+  /* background-image: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-photo%2Fgrunge-wooden-cutting-board-with-copy-space-design-make-food-background_3249-2468.jpg&f=1&nofb=1"); */
   height: 100vh;
   background-size: cover;
+  animation: screensaver 20s infinite;
+}
+
+@keyframes screensaver {
+  0% {
+      background-image: url('https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-photo%2Fgrunge-wooden-cutting-board-with-copy-space-design-make-food-background_3249-2468.jpg&f=1&nofb=1');
+  }
+  25% {
+      background-image: url('https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftheveganword.com%2Fwp-content%2Fuploads%2F2016%2F05%2Flaunch-page-cooking-2.jpg&f=1&nofb=1');
+  }
+  50% {
+      background-image: url('https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fvisitindianrivercounty.com%2Fwp-content%2Fuploads%2F2015%2F12%2FiStock_76355911_LARGE.jpg&f=1&nofb=1');
+  }
+  75% {
+      background-image: url('https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2017%2F10%2F22%2F21%2F02%2Ffood-2879265_960_720.jpg&f=1&nofb=1');
+  }
+  100% {
+      background-image: url('https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.psd-dude.com%2Ftutorials%2Fresources-images%2Ffree-frames-and-borders-texture-backgrounds-for-designers%2Frestaurant-food-frame-free-background.jpg&f=1&nofb=1');
+  }
 }
 
 .app-all {
@@ -22,7 +41,7 @@ flex-direction: column;
   font-family: 'Courgette', cursive;
   text-align: left;
   padding: 2rem;
-  background-image: url("https://3.bp.blogspot.com/-VZWmHfI6gIc/VtxFsWUbV0I/AAAAAAAAOkk/LP7t91IFx6s/s1600/IMG_9122.JPG");
+  background-image: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fdindins.com.au%2Fcms%2Fwordpress%2Fwp-content%2Fuploads%2F2014%2F05%2Fdin-dins-background.jpg&f=1&nofb=1");
   background-size: auto;
   width: 96%;
   top: 0;
@@ -52,7 +71,7 @@ header>h1>a {
 }
 
 .post-card {
-  background-image: url("https://images.freecreatives.com/wp-content/uploads/2016/02/Old-Paper-Background-For-Free-.jpg");
+  background-image: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fhealthy-food-background-picture-id507212121%3Fk%3D6%26m%3D507212121%26s%3D612x612%26w%3D0%26h%3D5we0N8gVgGoM6eEWCVMujCqaPdssDdqBNZYlHsXv94w%3D&f=1&nofb=1");
   cursor: pointer;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -72,7 +91,7 @@ header>h1>a {
   margin: 8rem auto;
   width: 20rem;
   padding: 0rem 0rem 2rem 0rem;
-  background-image: url("https://images.freecreatives.com/wp-content/uploads/2016/02/Old-Paper-Background-For-Free-.jpg");
+  background-image: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fhealthy-food-background-picture-id507212121%3Fk%3D6%26m%3D507212121%26s%3D612x612%26w%3D0%26h%3D5we0N8gVgGoM6eEWCVMujCqaPdssDdqBNZYlHsXv94w%3D&f=1&nofb=1");
   cursor: pointer;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -83,7 +102,7 @@ header>h1>a {
   display: grid;
   width: 20rem;
   margin: 15rem auto;
-  background: #d6d6d6;
+  background-image: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fhealthy-food-background-picture-id507212121%3Fk%3D6%26m%3D507212121%26s%3D612x612%26w%3D0%26h%3D5we0N8gVgGoM6eEWCVMujCqaPdssDdqBNZYlHsXv94w%3D&f=1&nofb=1");
   padding: 2rem 2rem 3.5rem 2rem;
 }
 
@@ -115,7 +134,6 @@ flex-direction: column;
   border-width: 1px;
   border-style: solid;
   border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
-  border-radius: 70%;
 }
 
 .user-name {
@@ -164,4 +182,8 @@ a:-webkit-any-link {
 
 .icon-pic {
   padding: 0rem;
+}
+
+.post-page-instruct {
+  background-color: rgba(245, 245, 245, 0.637);
 }

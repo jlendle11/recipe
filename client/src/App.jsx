@@ -192,7 +192,8 @@ class App extends Component {
                 posts={this.state.posts}
                 postForm={this.state.postForm}
                 handleFormChange={this.handleFormChange}
-                newPost={this.newPost} />
+                newPost={this.newPost} 
+                currentUser={this.state.currentUser} />
             )}
           />
           <Route

@@ -9,7 +9,7 @@ class Posts extends Component {
 
   render() {
   const { posts } = this.props
-  console.log(posts)
+  console.log(this.props)
   if (this.props.posts) {
   return (
     <div className="post-container">
@@ -25,6 +25,7 @@ class Posts extends Component {
               <h3 className="ingredients">{post.ingredients}</h3>
               <h2>Instructions:</h2>
               <h4 className="instructions">{post.instructions}</h4>
+              <p>Posted by user: {post.user_id}</p>
             </div>
           </div>
         ))} 
