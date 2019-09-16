@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :update]
+  before_action :set_post, only: [:show, :update, :destroy]
 
   # before_action :set_post, only: %i[show update destroy]
   # before_action :authorize_request, except: %i[index show]
