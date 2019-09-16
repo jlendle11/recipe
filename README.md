@@ -6,11 +6,11 @@
 - A simple full CRUD website that allows users to create a profile/login/logout. If logged in users can post recipes and view recipes posted by other users.
 
 ## Screenshot  
-- ![homepage](https://github.com/jlendle11/recipe/blob/master/client/src/Images/Homepage.png)
+![homepage](https://github.com/jlendle11/recipe/blob/master/client/src/Images/Homepage.png)
 
 ## Launch Instructions
 - Open app in preferred editor
-- ```CD``` into ```Client``` directory.
+- ```cd``` into ```Client``` directory.
 - Run ```npm start``` to launch React-app
 
 ## Code Snippet of creating/posting new recipe to API database
