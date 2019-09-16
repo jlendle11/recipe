@@ -1,4 +1,5 @@
-const baseUrl = 'http://localhost:3000'
+const baseUrl = 'https://morning-oasis-20856.herokuapp.com'
+
 
 export const loginUser = (loginData) => {
   const opts = {

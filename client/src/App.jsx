@@ -106,8 +106,6 @@ class App extends Component {
     })
   }
 
-  // -------------- AUTH ------------------
-
   handleLoginButton = () => {
     this.props.history.push("/login")
   }
