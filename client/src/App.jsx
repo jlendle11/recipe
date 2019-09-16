@@ -21,6 +21,7 @@ import {
 } from './services/api-helper'
 
 import './App.css';
+import Icon from './Images/icon.png'
 
 class App extends Component {
   state = {
@@ -145,27 +146,33 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <header>
-          <h1><Link to='/' onClick={() => this.setState({
-            postForm: {
-              title: "",
-              ingredients: "",
-              instructions: ""
-            }
-          })}>Recipe App</Link></h1>
-          <div>
+      <div className="app-all">
+        <header className="app-header">
+          <h1 className="app-title">
+            <Link 
+              to='/' 
+              onClick={() => this.setState({
+              postForm: {
+                title: "",
+                ingredients: "",
+                instructions: ""
+              }
+              })}
+            >Recipe App</Link>
+          </h1>
+          <div className="username-container">
             {this.state.currentUser
               ?
               <>
-                <p>{this.state.currentUser.username}</p>
-                <button onClick={this.handleLogout}>Logout</button>
+                <p className="user-name">{this.state.currentUser.username}</p>
+                <button className="log-button" onClick={this.handleLogout}>Logout</button>
               </>
               :
-              <button onClick={this.handleLoginButton}>Login / Register</button>
+              <button className="log-button" onClick={this.handleLoginButton}>Login / Register</button>
             }
           </div>
         </header>
+   
         <Switch>
           <Route exact path="/login" render={() => (
             <Login

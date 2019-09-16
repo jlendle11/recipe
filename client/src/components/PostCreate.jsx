@@ -7,7 +7,7 @@ function PostCreate(props) {
       <h2>Create new recipe</h2>
       <form onSubmit={props.newPost}>
 
-        <p>Recipe name:</p>
+        <p>Recipe Name:</p>
 
         <input
           type="text"

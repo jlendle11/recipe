@@ -1,28 +1,47 @@
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Francois+One&display=swap');
+
 body {
   text-align: center;
-  background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Chalkboard-Backgrounds.jpg");
+  background-image: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-photo%2Fgrunge-wooden-cutting-board-with-copy-space-design-make-food-background_3249-2468.jpg&f=1&nofb=1");
   height: 100vh;
+  background-size: cover;
 }
 
-h1 {
+.app-all {
+display: flex;
+flex-direction: column;
+}
+
+/* h1 {
   margin: 0;
-}
+} */
 
-header {
-  font-family: 'Permanent Marker', cursive;
+.app-header {
+  font-family: 'Courgette', cursive;
   text-align: left;
   padding: 2rem;
-  background-image: url("https://images.unsplash.com/photo-1446611720526-39d16597055c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-  width: 100%;
+  background-image: url("https://3.bp.blogspot.com/-VZWmHfI6gIc/VtxFsWUbV0I/AAAAAAAAOkk/LP7t91IFx6s/s1600/IMG_9122.JPG");
+  background-size: auto;
+  width: 96%;
   top: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
+
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) {
+       .app-header {
+         width: 100vw;
+       }
+    }
 
 header>h1>a {
   text-decoration: none;
-  cursor: pointer;
+  color: white;
+  width: 60%;
 }
 
 .post-container {
@@ -33,15 +52,31 @@ header>h1>a {
 }
 
 .post-card {
-  background: #d6d6d6;
+  background-image: url("https://images.freecreatives.com/wp-content/uploads/2016/02/Old-Paper-Background-For-Free-.jpg");
   cursor: pointer;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.post-card:hover {
+  background-size: 150%;
+  z-index: 2;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  transition: 1s ease;
 }
 
 .post-page {
   margin: 8rem auto;
-  background: #d6d6d6;
   width: 20rem;
   padding: 0rem 0rem 2rem 0rem;
+  background-image: url("https://images.freecreatives.com/wp-content/uploads/2016/02/Old-Paper-Background-For-Free-.jpg");
+  cursor: pointer;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .create-form {
@@ -52,12 +87,81 @@ header>h1>a {
   padding: 2rem 2rem 3.5rem 2rem;
 }
 
-img {
+.plus-sign {
   max-width: 15rem;
   padding: 2rem;
+  margin-top: 20%;
 }
 
 .plus-sign {
   max-width: 4rem;
   cursor: pointer;
+}
+
+.app-title {
+  font-size: 48px;
+  color: white;
+  width: 90%;
+}
+
+.username-container {
+display: flex;
+flex-direction: column;
+}
+
+.log-button:hover {
+  background-color: darkslategrey;
+  color: white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  border-radius: 70%;
+}
+
+.user-name {
+  color: whitesmoke;
+}
+
+.instructions {
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.ingredients {
+  /* font-family: 'Caveat', cursive; */
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.recipe-title {
+  font-family: 'Francois One', sans-serif;
+  color: black;
+  border-bottom: 1.5px solid black;
+}
+
+#back-button {
+  display: flex;
+  justify-content: flex-start; 
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+}
+
+#back-button:hover {
+  /* background-size: 110%; */
+  z-index: 2;
+  -webkit-transform: scale(1.01);
+  -ms-transform: scale(1.01);
+  transform: scale(1.01);
+  transition: 1s ease;
+  margin-left: 5px;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.icon-pic {
+  padding: 0rem;
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 
 class Posts extends Component {
+  // eslint-disable-next-line
   constructor(props){
     super(props)
   }
@@ -19,9 +20,11 @@ class Posts extends Component {
             onClick={() => this.props.history.push(`/posts/${post.id}`)}
           >
             <div>
-              <h1>{post.title}</h1>
-              <h2>{post.ingredients}</h2>
-              <h3>{post.instructions}</h3>
+              <h1 className="recipe-title">{post.title}</h1>
+              <h2>Ingredients:</h2>
+              <h3 className="ingredients">{post.ingredients}</h3>
+              <h2>Instructions:</h2>
+              <h4 className="instructions">{post.instructions}</h4>
             </div>
           </div>
         ))} 
@@ -32,7 +35,6 @@ class Posts extends Component {
             alt="Create a new post"
             src="https://image.flaticon.com/icons/png/512/14/14980.png"
             className="plus-sign" />
-          <h3>Create a new post</h3>
         </div>
     </div>
   )}}

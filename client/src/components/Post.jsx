@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PostEdit from './PostEdit'
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
+import Icon from '../Images/icon.png'
 
 class Post extends Component {
   constructor(props) {
@@ -17,10 +18,18 @@ class Post extends Component {
 
   render() {
     const { post } = this.props;
-    console.log(post, "state in posts", this.state)
     if (this.props.posts) {
     return (
       <div className="post-page">
+             <Link 
+          to='/'>
+          <h3 id="back-button">Back
+            <span className="icon-pic">
+              <img src={Icon} alt="back"></img>
+            </span>
+          </h3>
+        </Link>
+        
         {post === undefined ? <h2>Loading . . .</h2> : (
           <div>
 

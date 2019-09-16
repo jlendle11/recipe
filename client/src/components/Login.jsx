@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 
-
-// This component handles our login form and has a link to the register form
 const Login = (props) => {
   
   if (props.currentUser) {return <Redirect to={`/`} />}
 
   return (
     <div className="auth-container">
-      <h2>login</h2>
+      <h2>Login</h2>
       <hr />
       <form onSubmit={(e) => {
         e.preventDefault();
