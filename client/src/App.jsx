@@ -21,7 +21,6 @@ import {
 } from './services/api-helper'
 
 import './App.css';
-import Icon from './Images/icon.png'
 
 class App extends Component {
   state = {
