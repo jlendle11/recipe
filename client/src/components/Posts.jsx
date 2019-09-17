@@ -16,7 +16,7 @@ class Posts extends Component {
         {this.props.posts.map(post => (
           <div
             key={post.id}
-            className="post-card"
+            className="post-box"
             onClick={() => this.props.history.push(`/posts/${post.id}`)}
           >
             <div>
@@ -30,7 +30,7 @@ class Posts extends Component {
           </div>
         ))} 
         <div
-          className="post-card"
+          className="post-box"
           onClick={() => this.props.history.push('/new/post')}>
           <img
             alt="Create a new post"

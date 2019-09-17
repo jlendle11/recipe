@@ -70,7 +70,7 @@ header>h1>a {
   margin: 8rem 10rem;
 }
 
-.post-card {
+.post-box {
   background-image: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fhealthy-food-background-picture-id507212121%3Fk%3D6%26m%3D507212121%26s%3D612x612%26w%3D0%26h%3D5we0N8gVgGoM6eEWCVMujCqaPdssDdqBNZYlHsXv94w%3D&f=1&nofb=1");
   cursor: pointer;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -106,15 +106,13 @@ header>h1>a {
   padding: 2rem 2rem 3.5rem 2rem;
 }
 
-.plus-sign {
-  max-width: 15rem;
-  padding: 2rem;
-  margin-top: 20%;
-}
 
 .plus-sign {
   max-width: 4rem;
   cursor: pointer;
+  max-width: 15rem;
+  padding: 2rem;
+  margin-top: 20%;
 }
 
 .app-title {
