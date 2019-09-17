@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 function PostEdit(props) {
-    console.log('Hi')
+
   return (
     <div>
       <h3 className="post-page-instruct">Edit post</h3>

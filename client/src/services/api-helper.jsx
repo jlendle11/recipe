@@ -1,4 +1,4 @@
-const baseUrl = 'https://morning-oasis-20856.herokuapp.com'
+const baseUrl = 'http://localhost:3000/'
 
 
 export const loginUser = (loginData) => {
@@ -70,11 +70,17 @@ const destroyPost = (id) => {
     return fetch(`${baseUrl}/posts/${id}`, opts)
 }
 
+const readOneUser = (id) => {
+  return fetch(`${baseUrl}/users/${id}`)
+    .then(resp => resp.json())
+}
+
 
 export {
   createPost,
   readAllPosts,
   readOnePost,
   destroyPost,
-  updatePost
+  updatePost,
+  readOneUser
 }

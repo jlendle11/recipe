@@ -1,15 +1,28 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
+import { readOneUser } from '../services/api-helper';
 
 class Posts extends Component {
   // eslint-disable-next-line
   constructor(props){
     super(props)
+  
+  }
+
+  getUserData = async (id) => {
+    //  let user = await readOneUser(id)
+    // //  console.log(user.username)
+    //   // return user.username
+    //   let temp = await Promise.resolve(user)
+    //   user = temp
+    //   console.log(user.username)
+      return "hi"
   }
 
   render() {
   const { posts } = this.props
-  console.log(this.props)
+  
+
   if (this.props.posts) {
   return (
     <div className="post-container">

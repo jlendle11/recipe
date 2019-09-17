@@ -3,7 +3,9 @@ class UsersController < ApplicationController
   # before_action :authorize_request, except: :create
 
   before_action :set_user, only: %i[show update destroy]
-  before_action :authorize_request, except: :create
+  # before_action :authorize_request, except: :create
+  # before_action :authorize_request, except: :show
+
 
   # GET /users
   def index

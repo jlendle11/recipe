@@ -4,7 +4,6 @@
 
 body {
   text-align: center;
-  /* background-image: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-photo%2Fgrunge-wooden-cutting-board-with-copy-space-design-make-food-background_3249-2468.jpg&f=1&nofb=1"); */
   height: 100vh;
   background-size: cover;
   animation: screensaver 20s infinite;
@@ -32,10 +31,6 @@ body {
 display: flex;
 flex-direction: column;
 }
-
-/* h1 {
-  margin: 0;
-} */
 
 .app-header {
   font-family: 'Courgette', cursive;
@@ -78,8 +73,8 @@ header>h1>a {
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
-.post-card:hover {
-  background-size: 150%;
+.post-box:hover {
+  background-size: 130%;
   z-index: 2;
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
@@ -109,8 +104,6 @@ header>h1>a {
 
 .plus-sign {
   max-width: 4rem;
-  cursor: pointer;
-  max-width: 15rem;
   padding: 2rem;
   margin-top: 20%;
 }
