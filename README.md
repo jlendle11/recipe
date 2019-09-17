@@ -1,24 +1,33 @@
-# README
+# Recipe App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Link to App  - [Site]("http://jlrecipe-app.surge.sh/")
 
-Things you may want to cover:
+## Description
+- A simple full CRUD website that allows users to create a profile/login/logout. If logged in users can post recipes and view recipes posted by other users.
 
-* Ruby version
+## Screenshot  
+![homepage](https://github.com/jlendle11/recipe/blob/master/client/src/Images/Homepage.png)
 
-* System dependencies
+## Launch Instructions
+- Open app in preferred editor
+- ```cd``` into ```Client``` directory.
+- Run ```npm start``` to launch React-app
 
-* Configuration
+## Code Snippet of creating/posting new recipe to API database
 
-* Database creation
+```
+const createPost = (data, user) => {
+  const payload = Object.assign({}, data, {user_id: user})
+  console.log(user)
+  const opts = {
+    method: 'POST',
+    body: JSON.stringify(payload),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+  fetch(`${baseUrl}/posts`, opts)
+    .then(resp => resp.json())
+}
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
