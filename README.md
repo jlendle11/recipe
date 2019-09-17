@@ -3,7 +3,7 @@
 ## Link to App  - [Site]("http://jlrecipe-app.surge.sh/")
 
 ## Description
-- A simple full CRUD website that allows users to create a profile/login/logout. If logged in users can post recipes and view recipes posted by other users.
+- A simple full CRUD website that allows users to create a profile/login/logout. If logged in, users can post recipes and view recipes posted by other users.
 
 ## Screenshot  
 ![homepage](https://github.com/jlendle11/recipe/blob/master/client/src/Images/Homepage.png)
