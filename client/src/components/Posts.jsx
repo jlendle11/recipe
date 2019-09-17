@@ -9,7 +9,6 @@ class Posts extends Component {
 
   render() {
   const { posts } = this.props
-  console.log(this.props)
   if (this.props.posts) {
   return (
     <div className="post-container">

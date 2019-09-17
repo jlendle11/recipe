@@ -112,12 +112,10 @@ class App extends Component {
 
   handleLogin = async () => {
     const userData = await loginUser(this.state.authFormData);
-    console.log(userData)
     this.setState({
       currentUser: decode(userData.token)
     })
     localStorage.setItem("jwt", userData.token)
-    localStorage.setItem("id", userData.id)
   }
 
   handleRegister = async (e) => {
