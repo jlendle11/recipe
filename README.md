@@ -1,6 +1,6 @@
 # Recipe App
 
-## Link to App  - [Site]("http://jlrecipe-app.surge.sh/")
+## Link to App  - [Site](http://jlrecipe-app.surge.sh/ "Recipe App")
 
 ## Description
 - A simple full CRUD website that allows users to create a profile/login/logout. If logged in, users can post recipes and view recipes posted by other users.
